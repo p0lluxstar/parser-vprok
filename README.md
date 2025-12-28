@@ -20,16 +20,14 @@
 
 1. Клонируйте репозиторий или скачайте проект
 
+```bash
+git clone https://github.com/p0lluxstar/parser-vprok.gi
+```
+
 2. Установите зависимости:
 
 ```bash
 npm install
-```
-
-3. Соберите проект:
-
-```bash
-npm run build
 ```
 
 ## Использование
@@ -41,7 +39,7 @@ npm run build
 **Синтаксис:**
 
 ```bash
-npm run puppeteer <URL> <REGION>
+node puppeteer.ts <URL> <REGION>
 ```
 
 **Параметры:**
@@ -52,7 +50,7 @@ npm run puppeteer <URL> <REGION>
 **Пример:**
 
 ```bash
-npm run puppeteer "https://www.vprok.ru/product/123456" "Москва"
+node puppeteer.js https://www.vprok.ru/product/domik-v-derevne-dom-v-der-moloko-ster-3-2-950g--309202 "Санкт-Петербург и область"
 ```
 
 **Результат:**
@@ -67,7 +65,7 @@ npm run puppeteer "https://www.vprok.ru/product/123456" "Москва"
 **Синтаксис:**
 
 ```bash
-npm run api <URL>
+node api-parser.ts <URL>
 ```
 
 **Параметры:**
@@ -77,7 +75,7 @@ npm run api <URL>
 **Пример:**
 
 ```bash
-npm run api "https://www.vprok.ru/catalog/123/molochnye-produkty"
+node api-parser.ts https://www.vprok.ru/catalog/7382/pomidory-i-ovoschnye-nabory 
 ```
 
 **Результат:**
@@ -100,46 +98,3 @@ parser-vprok/
 ├── tsconfig.json
 └── README.md
 ```
-
-## Интерфейсы
-
-### IProduct
-
-Интерфейс для описания товара:
-
-```typescript
-interface IProduct {
-    productId: number;
-    name: string;
-    url: string;
-    price: number;
-    oldPrice: number;
-    discount: number;
-    rating: number;
-    reviews: number;
-}
-```
-
-## Скрипты
-
-- `npm run build` - компиляция TypeScript в JavaScript
-- `npm run puppeteer` - запуск парсера отдельного товара
-- `npm run api` - запуск парсера списка товаров
-- `npm run lint` - проверка кода линтером
-
-## Особенности
-
-- Использует stealth-плагин для обхода детекции автоматизации
-- Поддерживает выбор региона для корректного отображения цен
-- Извлекает данные как из DOM-элементов, так и из JSON данных страницы
-- Автоматически создаёт скриншоты страниц
-- Результаты сохраняются в текстовые файлы в директории `parsed/`
-
-## Требования
-
-- Node.js (версия 18+)
-- npm или yarn
-
-## Лицензия
-
-ISC
