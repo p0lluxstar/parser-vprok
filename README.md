@@ -21,10 +21,16 @@
 1. Клонируйте репозиторий или скачайте проект
 
 ```bash
-git clone https://github.com/p0lluxstar/parser-vprok.gi
+git clone https://github.com/p0lluxstar/parser-vprok.git
 ```
 
-2. Установите зависимости:
+2. Переместитесь в директорию проекта
+
+```bash
+cd parser-vprok
+```
+
+3. Установите зависимости:
 
 ```bash
 npm install
@@ -47,10 +53,12 @@ node puppeteer.ts <URL> <REGION>
 - `URL` - ссылка на страницу товара на vprok.ru
 - `REGION` - название региона (например, "Москва")
 
+> **Важно:** Команду необходимо выполнять из каталога `src`
+
 **Пример:**
 
 ```bash
-node puppeteer.js https://www.vprok.ru/product/domik-v-derevne-dom-v-der-moloko-ster-3-2-950g--309202 "Санкт-Петербург и область"
+node puppeteer.ts https://www.vprok.ru/product/domik-v-derevne-dom-v-der-moloko-ster-3-2-950g--309202 "Санкт-Петербург и область"
 ```
 
 **Результат:**
@@ -71,6 +79,9 @@ node api-parser.ts <URL>
 **Параметры:**
 
 - `URL` - ссылка на страницу категории/каталога на vprok.ru
+
+> **Важно:** Команду необходимо выполнять из каталога `src`
+
 
 **Пример:**
 
